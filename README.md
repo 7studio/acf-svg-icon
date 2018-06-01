@@ -67,7 +67,7 @@ By the way, you can also use this filter to reduce the list of SVG symbols ;)
 
 But if you are lazy (like me) and you are afraid of forgetting to update your filter hook for translations, you can use the fourth (and the better) way:
 
-```
+```html
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <path id="BackgroundShape" fill="#efefef" stroke="none" d="…" />

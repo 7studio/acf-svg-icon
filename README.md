@@ -106,6 +106,32 @@ You are able to define all your symbols' data into a special HTML comment `<!-- 
 
 If you use SVGO or something else to optimise your SVG files, you should turn off the remove comments option to keep the plugin extra comments.
 
+## SVGO usage/plugin
+
+If you use SVGO and allowed to add a custom task, you can copy/paste the code below to turn off the `removeComments` task and register a new one which removes comments except if it's important (default behaviour `<!--! my important comment -->`) and if it's needed by ACF SVG Icon Field as well.
+
+```js
+{
+  removeComments: false
+},
+{
+  stripComments: {
+    type: 'perItem',
+    description: 'strips comments',
+    params: {},
+    fn: (item, params) => {
+        if (!item.comment) {
+          return;
+        }
+
+        if (item.comment.charAt(0) !== '!' && ! /^swp-acf-si:/.test(item.comment)) {
+          return false;
+        }
+    }
+  }
+}
+```
+
 ## Changelog
 
 ### 1.0.0 (May 31, 2018)

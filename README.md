@@ -48,7 +48,7 @@ function tc_acf_svg_icon_symbol( $symbols ) {
         	'title' => 'Twitter'
         ),
         'IconFacebook' => array(
-        	'title'         => 'Facebook'
+        	'title'         => 'Facebook',
         	'default_color' => '#3b5998'
         )
     );

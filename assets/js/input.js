@@ -1,4 +1,21 @@
 ( function( $ ) {
+    /**
+     * Returns the Select2 version number which is used by ACF.
+     *
+     * @return int
+     */
+    function get_acf_select2_version() {
+        if ( acf.isset( window, 'jQuery', 'fn', 'select2', 'amd' ) ) {
+            return 4;
+        }
+
+        if ( acf.isset( window, 'Select2' ) ) {
+            return 3;
+        }
+
+        return false;
+    }
+
     function initialize_field( $el ) {
         var $el_select = $el.find( 'select' );
         var el_select_args = $el_select.data();
@@ -25,8 +42,13 @@
                  *
                  * https://stackoverflow.com/questions/26950588/select2-ajax-define-formatresult-formatselection-and-initselection-roles-and-b#answer-37890878
                  * https://select2.org/configuration/options-api
+                 *
+                 * It seems that since ACF Pro 5.7.0, `acf.select.version` doesn't exist anymore :/
+                 * Now, ACF Pro uses `acf.newSelect2` which doesn't offer the Select2 version in its properties.
                  */
-                if ( acf.select2.version == 4 ) {
+                var select2_version = acf.select2.version || get_acf_select2_version();
+
+                if ( select2_version == 4 ) {
                     select2_args.templateResult = function( state ) {
                         // run default templateResult
                         var text = $.fn.select2.defaults.defaults.templateResult( state );

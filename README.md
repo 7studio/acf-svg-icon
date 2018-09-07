@@ -134,5 +134,10 @@ If you use SVGO and allowed to add a custom task, you can copy/paste the code be
 
 ## Changelog
 
+### 1.0.1 (September 7, 2018)
+* Add compatibility for ACF Pro 5.7.x
+* Introduce SVGO custom task `stripComments` 
+* Fix mistakes in README
+
 ### 1.0.0 (May 31, 2018)
 * Initial Release.

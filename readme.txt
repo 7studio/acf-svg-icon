@@ -27,5 +27,10 @@ This ACF field type is compatible with:
 
 == Changelog ==
 
+= 1.0.1 =
+* Add compatibility for ACF Pro 5.7.x
+* Introduce SVGO custom task `stripComments`
+* Fix mistakes in README
+
 = 1.0.0 =
 * Initial Release.

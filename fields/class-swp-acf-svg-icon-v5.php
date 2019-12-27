@@ -384,13 +384,13 @@ if ( ! class_exists( 'swp_acf_field_svg_icon' ) )  {
             // v4
             if ( $select2_major_version == 4 ) {
                 $select2_version = '4.0';
-                $select2_script = acf_get_dir( "assets/inc/select2/4/select2.full{$min}.js" );
-                $select2_style = acf_get_dir( "assets/inc/select2/4/select2{$min}.css" );
+                $select2_script = acf_get_url( "assets/inc/select2/4/select2.full{$min}.js" );
+                $select2_style = acf_get_url( "assets/inc/select2/4/select2{$min}.css" );
             // v3
             } else {
                 $select2_version = '3.5.2';
-                $select2_script = acf_get_dir( "assets/inc/select2/3/select2{$min}.js" );
-                $select2_style = acf_get_dir( "assets/inc/select2/3/select2.css" );
+                $select2_script = acf_get_url( "assets/inc/select2/3/select2{$min}.js" );
+                $select2_style = acf_get_url( "assets/inc/select2/3/select2.css" );
             }
 
             wp_enqueue_script( 'select2', $select2_script, array( 'jquery' ), $select2_version );
